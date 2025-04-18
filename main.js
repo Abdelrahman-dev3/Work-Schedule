@@ -20,9 +20,7 @@ if (localStorage.alltrips != null) {
     dataArray = []
 }
 
-
 function getData() {
-
     let dataObject = {
         title: title.value,
         from: from.value,
@@ -34,33 +32,23 @@ function getData() {
         tripNumber: tripNumber.value
     }
 
-
 if (mood === "add") {
     dataArray.push(dataObject)
-    
 }else{
-  dataArray[    temp      ] = dataObject
+    dataArray[    temp      ] = dataObject
 }
 
-
-
-
-    localStorage.setItem("alltrips", JSON.stringify(dataArray))
-
-    
-    
+    localStorage.setItem("alltrips", JSON.stringify(dataArray))    
     setData()
 
-
-
     title.value=""
-     from.value=""
-     to.value=""
-     data.value=""
-     time.value=""
-     price.value=""
-     roomNumber.value=""
-     tripNumber.value=" "
+    from.value=""
+    to.value=""
+    data.value=""
+    time.value=""
+    price.value=""
+    roomNumber.value=""
+    tripNumber.value=" "
 }
 
 // set data
@@ -126,27 +114,24 @@ let able;
             <td><button onclick=" deleteTrip(${i})" id="delete">Delete</button></td>
         </tr>
         `
-            
         }
         
     }
     document.getElementById("tbody").innerHTML = able
-
-    
 }
 
 // inputs focus
 function inpFocus() {
     document.querySelectorAll('input').forEach((input, index, inputs) => {
         input.addEventListener('keydown', (event) => {
-          if (event.key === "Enter") {
-            event.preventDefault();
-            let nextInput = inputs[index + 1];
-            if (nextInput) {
-              nextInput.focus(); 
+            if (event.key === "Enter") {
+                event.preventDefault();
+                let nextInput = inputs[index + 1];
+                if (nextInput) {
+                    nextInput.focus(); 
+                }
             }
-          }
         });
-      });
+    });
 }
 inpFocus()

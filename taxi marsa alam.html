@@ -1,165 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-:root {
-    --main-color: linear-gradient(to bottom, rgb(117, 228, 178), rgb(65, 177, 207));
-}
-
-.container {
-    position: relative;
-    display: inline-block;
-}
-
-.trademark {
-    position: absolute;
-    top: 95px;
-    right: 42px;
-    left: 10px;
-    font-size: 250px;
-    color: rgba(255, 255, 255, 0.3);
-    font-weight: bold;
-    pointer-events: none;
-}
-
-body {
-    margin: 0;
-    background: linear-gradient(to bottom, rgb(37, 42, 53), #000000);
-}
-
-.headbar {
-    color: #e0e3d2;
-    font-family: sans-serif;
-    text-align: center;
-}
-
-.headbar h1 {
-    font-weight: 800;
-    font-size: 40px;
-}
-
-
-.inputs {
-    border-radius: 30px 30px 0 0;
-    background-color: white;
-    /* text-align: center; */
-    height: 780px;
-    width: 100%;
-}
-
-.inputs h1 {
-    text-align: center;
-    background: var(--main-color);
-    font-family: cursive;
-}
-
-.allinp {
-    width: 50%;
-    margin: auto;
-}
-
-label {
-    font-weight: bold;
-    font-size: 25px;
-    font-family: ui-monospace;
-}
-
-input {
-    width: 100%;
-    margin: 4px;
-    padding: 5px;
-    border-radius: 17px;
-    border: solid 2px black;
-}
-
-.submit {
-    background: var(--main-color);
-    border: none;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-#sort {
-    text-align: center;
-    margin-top: 20px;
-    border: rgb(213, 164, 4) 2px solid;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #ecf7f3;
-    text-align: center;
-
-}
-
-td {
-    border: 2px solid rgba(91, 91, 91, 0.436);
-    font-size: 15px;
-    font-family: sans-serif;
-
-}
-
-th {
-    font-size: 20px;
-    font-weight: bold;
-    font-family: sans-serif;
-    padding: 6px;
-}
-
-.yourTrips {
-    line-height: 1.9;
-    font-size: 25px;
-    height: 55px;
-    background: rgb(37, 42, 53);
-    margin: 0px;
-    font-family: cursive;
-    color: antiquewhite;
-}
-
-#edit,
-#delete {
-    background: var(--main-color);
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 8px;
-    /* margin-top: 5px; */
-    border: none;
-    color: white;
-    font-family: cursive;
-    transition: all .5s;
-    /* margin-bottom: 5px; */
-}
-
-#edit:hover {
-    color: green
-}
-
-
-#delete:hover {
-    color: rgb(248, 9, 9);
-}
-
-
-
-.table-container {
-  max-width: 100%; /* يمنع الجدول من تجاوز المحتوى */
-  overflow-x: auto; /* يسمح بالتمرير الأفقي إذا كان الجدول كبيرًا */
-}
-
-
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-
-
     <!-- head -->
     <div class="headbar">
         <h1>Reservations book</h1>
@@ -167,10 +14,6 @@ th {
         <img width="450px" src="png-transparent.png" alt="">
         <div class="container"></div>
     </div>
- 
-
-
-
 
     <!-- midelle -->
     <div class="inputs">
@@ -179,60 +22,46 @@ th {
         <h1>New Trip</h1>
         <!-- a -->
         <div class="allinp">
-
-            <div class="a">
+            <div class="d_title">
                 <label for="title">title</label>
                 <input id="title" type="text">
             </div>
-
-            <div class="f">
+            <div class="d_from">
                 <label for="from">from </label>
                 <input  id="from" type="text">
             </div>
-
-            <div class="g">
+            <div class="d_to">
                 <label for="to">to</label>
                 <input id="to" type="text">
             </div>
-
-            <div class="b">
+            <div class="d_date">
                 <label for="date">date</label>
                 <input id="date" type="date">
             </div>
-
-            <div class="c">
+            <div class="d_time">
                 <label for="time">time</label>
                 <input id="time" type="time">
             </div>
-
-            <div class="d">
+            <div class="d_price">
                 <label for="price">price</label>
                 <input id="price" type="text">
             </div>
-
-            <div class="e">
+            <div class="d_rn">
                 <label for="roomNumber">room number</label>
                 <input id="roomNumber" type="number">
             </div>
-
-            <div class="l">
+            <div class="d_tn">
                 <label for="tripNumber">trip number</label>
                 <input id="tripNumber" type="text">
             </div>
-
-
             <input onclick="getData()" id="sub" class="submit" value="Add Trip" type="submit">
-
             <input onkeyup="sortData(value)" placeholder="sort by month" id="sort" type="number">
         </div>
     </div>
     <!-- foot -->
-        <h1 class="yourTrips"> ‎‎‎‎‎‎‏‎ Your Trips</h1>
-        
-        
-        
-        <div class="table-container">
-        <table >
+<h1 class="yourTrips">  Your Trips</h1>
+<div class="table-container">
+    <table >
             <thead>
                 <th>Title </th>
                 <th>From </th>
@@ -246,177 +75,11 @@ th {
                 <th>Delete</th>
             </thead>
             <tbody id="tbody">
-    
+                <!-- content -->
             </tbody>
-
     </table>
 </div>
-
-
-
-
-    <script>
-        let title = document.getElementById("title")
-let from = document.getElementById("from")
-let to = document.getElementById("to")
-let data = document.getElementById("date")
-let time = document.getElementById("time")
-let price = document.getElementById("price")
-let roomNumber = document.getElementById("roomNumber")
-let tripNumber = document.getElementById("tripNumber")
-let submit = document.getElementById("sub")
-let sort = document.getElementById("sort")
-
-let mood = "add"
-let temp;
-
-// get data
-let dataArray;
-if (localStorage.alltrips != null) {
-    dataArray = JSON.parse(localStorage.alltrips)
-} else {
-    dataArray = []
-}
-
-
-function getData() {
-
-    let dataObject = {
-        title: title.value,
-        from: from.value,
-        to: to.value,
-        data: data.value,
-        time: time.value,
-        price: price.value,
-        roomNumber: roomNumber.value,
-        tripNumber: tripNumber.value
-    }
-
-
-if (mood === "add") {
-    dataArray.push(dataObject)
-    
-}else{
-  dataArray[    temp      ] = dataObject
-  mood = "add"
-  submit.value ="Add Trip"
-  
-}
-
-
-
-
-    localStorage.setItem("alltrips", JSON.stringify(dataArray))
-
-    
-    
-    setData()
-
-
-
-    title.value=""
-     from.value=""
-     to.value=""
-     data.value=""
-     time.value=""
-     price.value=""
-     roomNumber.value=""
-     tripNumber.value=" "
-}
-
-// set data
-function setData() {
-    let table = ""
-    for (let i = 0; i < dataArray.length; i++) {
-        table += `
-        <tr>
-            <td>${dataArray[i].title} </td>
-            <td>${dataArray[i].from} </td>
-            <td>${dataArray[i].to}</td>
-            <td>${dataArray[i].data}</td>
-            <td>${dataArray[i].time} </td>
-            <td>${dataArray[i].price} </td>
-            <td>${dataArray[i].roomNumber} </td>
-            <td>${dataArray[i].tripNumber} </td>
-            <td><button onclick=" editTrip(${i})" id="edit">Edit</button></td>
-            <td><button onclick=" deleteTrip(${i})" id="delete">Delete</button></td>
-        </tr>
-        `
-    }
-    document.getElementById("tbody").innerHTML = table
-}
-setData()
-
-// delete trip
-function deleteTrip(i) {
-    dataArray.splice(i,1)
-    localStorage.alltrips = JSON.stringify(dataArray)
-setData()
-}
-// edit trip
-function editTrip(i) {
-    scroll({
-        top:510.3999938964844,
-        behavior:"smooth"
-    })
-
-    title.value =  dataArray[i].title
-    from.value = dataArray[i].from
-    to.value = dataArray[i].to
-    data.value = dataArray[i].data
-    time.value = dataArray[i].time
-    price.value = dataArray[i].price
-    roomNumber.value = dataArray[i].roomNumber
-    tripNumber.value = dataArray[i].tripNumber
-    submit.value ="Add Edit"
-    mood = "edit"
-    temp = i
-}
-// sort
-
-function sortData(value) {
-let able ="";
-    for (let i = 0; i < dataArray.length; i++) {
-        if (dataArray[i].data.includes(value)) {
-            able +=  `
-        <tr>
-            <td>${dataArray[i].title} </td>
-            <td>${dataArray[i].from} </td>
-            <td>${dataArray[i].to}</td>
-            <td>${dataArray[i].data}</td>
-            <td>${dataArray[i].time} </td>
-            <td>${dataArray[i].price} </td>
-            <td>${dataArray[i].roomNumber} </td>
-            <td>${dataArray[i].tripNumber} </td>
-            <td><button onclick=" editTrip(${i})" id="edit">Edit</button></td>
-            <td><button onclick=" deleteTrip(${i})" id="delete">Delete</button></td>
-        </tr>
-        `
-            
-        }
-        
-    }
-    document.getElementById("tbody").innerHTML = able
-
-    
-}
-
-// inputs focus
-function inpFocus() {
-    document.querySelectorAll('input').forEach((input, index, inputs) => {
-        input.addEventListener('keydown', (event) => {
-          if (event.key === "Enter") {
-            event.preventDefault();
-            let nextInput = inputs[index + 1];
-            if (nextInput) {
-              nextInput.focus(); 
-            }
-          }
-        });
-      });
-}
-inpFocus()
-    </script>
+<script src="main.js"></script>
 </body>
 
 </html>
